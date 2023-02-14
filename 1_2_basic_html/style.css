@@ -18,3 +18,34 @@ h3 {
 p {
   font-size: 1em;
 }
+
+table {
+  border-collapse: collapse;
+  outline-color: purple;
+  outline-style: solid;
+}
+  th, td {
+    text-align: center;
+    border: 1px solid black;
+    border-style: dotted;
+  padding: 5px;
+  }
+  
+  th {
+    background-color: red;
+    color: white;
+  }
+
+  td:first-child {
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+  }
+
+  button {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
