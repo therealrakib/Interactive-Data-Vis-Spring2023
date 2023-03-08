@@ -24,6 +24,8 @@ table {
   outline-color: purple;
   outline-style: solid;
 }
+
+
   th, td {
     text-align: center;
     border: 1px solid black;
@@ -48,4 +50,9 @@ table {
     padding: 10px;
     text-align: center;
     font-size: 16px;
+  }
+
+  
+  .randomColor {
+    background-color: yellow;
   }
