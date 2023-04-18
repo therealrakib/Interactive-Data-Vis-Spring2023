@@ -5,31 +5,31 @@ const width = window.innerWidth * 0.8,
   radius = 5;
 
 /* LOAD DATA */
-d3.json("environmentRatings.json", d3.autoType)
+d3.csv("incomeData.csv", d3.autoType)
   .then(data => {
     console.log(data)
 
     /* SCALES */
 
-    //envScore2020 on y, envScoreLifetime on x
+    //income on y, Year on x
   const yScale = d3.scaleLinear()
-  .domain(d3.extent(data, d=>d.envScore2020))
+  .domain(d3.extent(data, d=>d.income))
   .range([height-margin.bottom,margin.top])
 
   const xScale = d3.scaleLinear()
-  .domain(d3.extent(data, d => d.envScoreLifetime))
+  .domain(d3.extent(data, d => d.year))
   .range([margin.left,width-margin.right])
 
   //Democrats as blue. Republicans as Red.
   const colorScale= d3.scaleOrdinal()
-  .domain(["R", "D"])
+  .domain(["2", "1"])
   .range(["red", "blue"])
 
 
   //using ideologyScore2020 to dictate size of the dots
 
-  const ideologyScale = d3.scaleLinear()
-  .domain([0,d3.max(data.map(d => d.ideologyScore2020))])
+  const differenceScale = d3.scaleSqrt()
+  .domain([0,d3.max(data.map(d => d.difference))])
   .range([0,100])
   
     /* HTML ELEMENTS */
@@ -61,7 +61,7 @@ d3.json("environmentRatings.json", d3.autoType)
     .attr("y", height - margin.bottom/2)
     .attr("fill", "black")
     .attr("text-anchor", "middle")
-    .text("envScoreLifetime");
+    .text("Year");
 
 
   svg.append("text")
@@ -71,18 +71,18 @@ d3.json("environmentRatings.json", d3.autoType)
     .attr("transform", "rotate(-90)")
     .attr("fill", "black")
     .attr("text-anchor", "middle")
-    .text("envScore2020");
+    .text("Annual Household Income");
 
 
-    //scatterplot dots, x corresponds to envScoreLifetime, y corresponds to envScore2020,
-    //radius correspond to ideologyScore2020 & filled as Party (D or R)
+    //scatterplot dots, x corresponds to year, y corresponds to income,
+    //radius correspond to income - consumer expenditure difference & filled as Party (D or R)
 
   const dot = svg
     .selectAll("circle")
     .data(data)
     .join("circle")
-    .attr("cx", d => xScale(d.envScoreLifetime))
-    .attr("cy", d => yScale(d.envScore2020))
-    .attr("r",  d=>ideologyScale(d.ideologyScore2020)/10)
-    .attr("fill", d => colorScale(d.Party))
+    .attr("cx", d => xScale(d.year))
+    .attr("cy", d => yScale(d.income))
+    .attr("r",  d=>differenceScale(d.difference)/2.5)
+    .attr("fill", d => colorScale(d.difference_mean))
   });
