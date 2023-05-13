@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<!-- Websites I have utilized to get help with coding issues and coming up with ideas:
+  www.stackoverflow.com
+  www.javascripttutorial.net
+  ** I try my best to cite sources wherever I have used ideas from somewhere
+-->
+
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Home Ownership Accessibility in the United States</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../lib/d3.js"></script>
+  </head>
+  <body>
+
+    <div class="all-content-center">
+
+    <div class="title">
+        <h1>Home Ownership Accessibility in the United States</h1>
+        <h5>Muhammad Rakibul Islam (Rakib)</h5>
+    </div>
+
+    <br>
+    
+    <img src="images/header-image.jpg" alt="Header Image" style="width: 100%;">
+
+    <p>Owning a home is one of the biggest aspirations for most people in the United States. In fact, according to a <a href="https://www.nerdwallet.com/article/mortgages/2018-home-buyer-report#:~:text=Homebuying%20concerns,have%20concerns%20about%20purchasing%20one.">survey conducted by NerdWallet</a>, “an overwhelming majority of Americans (91%) would like to own at least one home in their lifetime”.</p>
+    <p>However, concerns have been rising for a good number of years now about how accessible the market really is and how it has changed over the years.</p>
+    <p>During the past two years, having worked as a strategy consultant for political campaigns, I have come across several constituent surveys where home ownership affordability was a common issue.</p>
+    <p>That and my personal interest in home ownership created a natural curiosity to see how accessibility has changed and to try and see if there were rather hidden factors at play that are not frequently discussed.</p>
+
+    <h4 class="title">Table of Contents</h4>
+    <p><b><a href="#income_down">1. Income vs Down Payment</a></b></p>
+    <p><b><a href="#mortgage_eligibility">2. Mortgage Eligibility</a></b></p>
+    <p><b><a href="#income-groups">3. Mortgage Eligibility by Income Groups</a></b></p>
+    <p><b><a href="#race-chart">4. Income vs Down Payment by Race</a></b></p>
+
+    <p><b><a href="#brief-analysis">5. Brief Analysis</a></b></p>
+    <p><b><a href="#policy-recommendation">6. Policy Recommendation</a></b></p>
+    <p><b><a href="#data-sources">7. Data Sources</a></b></p>
+
+
+  
+
+    <h2 class="title" id="income_down">Income vs Down Payment</h2>
+    <p>One of the most fundamental methodologies used to track home ownership accessibility is to study how household income has changed relative to home prices.</p>
+    <p>However, home sales price is a much higher number when compared to income. Additionally, most home buyers traditionally use a loan instead of buying outright. Hence, the better comparison would be between the median annual income and the median down payment (calculates as 20% of the home sales price - the standard down payment percentage used by lenders and realtors).</p>
+
+    <div id="container"> </div>
+    <script src="first-chart.js"></script>
+    
+   
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: blue;"></div>
+    <span>Annual Median Household Income</span>
+  </div>
+
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: red;"></div>
+    <span>Down Payment (20%)</span>
+  </div>
+</div>
+
+<br>
+
+<p>What is evident here is that accessibility does decrease over time for the median earning American as down payment overtakes income over time and is growing at a faster rate.</p>
+<p>The first time this was recorded in history is in 2005 and then again things momentarily got better for a few years after the 2007-2008 financial crisis. The years leading up to the financial crisis saw housing prices increasing faster than the norm (a bubble that would eventually burst). Since getting a subprime mortgage was easy, the increased home buying demand drove housing prices up fast but just as fast as it happened, it soon tanked after the great recession.</p>
+<p>Things started getting better again in 2019. However, post pandemic, 2021 again registered a huge jump when mortgage rates reached a record low making home buying prospects better while at the same time while thanks to the various economic stimuli investments also increased. This drove demand for housing high and since supply is limited, housing prices soared.</p>
+
+<h2 class="title" id="mortgage_eligibility">Mortgage Eligibility</h2>
+
+    <p>While being able to afford the down payment is after all the most important component of the home-buying process, an important step is to see if somebody will actually qualify for the mortgage itself. Let's say you have worked for years to save up for the down payment or have received some gifts and now want to get a mortgage.</p>
+    <p>This is a trickier question as a lot of factors do come into play including credit score, lending history, overall debt, etc. But since we are discussing accessibility as an income based topic, the most important factor that lenders use for mortgage qualification is to check the monthly mortgage payment to income ratio.</p>
+    <p>Lenders in the United States commonly use the 28% rule where a person will qualify for a mortgage, provided again that all other conditions are met, only when their monthly mortgage payment will not exceed 28% of their monthly income.</p>
+    <p>Now to visualize this, I had already gathered the median income data so it would not be difficult to calculate the median 28% of monthly income.</p>
+    <p>28% of income is an easy calculation and then we calculate the median mortgage based on median home price and average interest rate for a year.</p>
+    <!--p>However, the monthly mortgage payment is a little trickier to calculate. Now some of the information was already available. I knew the median home sale price, and that a 20% down payment was to be made and considered the standard 30-year loan that most buyers use. The remaining data that was necessary was the average mortgage rate for a particular year which helps determine the monthly payment. </p>   
+    <p>Thankfully Excel has a very useful function called the PMT function which helps determine the monthly mortgage payment quite easily once all other data was available. </p>
+    <p>You can earn more about PMT function at this <a href="https://support.microsoft.com/en-us/office/pmt-function-0214da64-9a63-4996-bc20-214433fa6441">Micrososft 365 Support Page</a>.</p-->
+    
+    <div id="second-container"></div>
+    <script src="second-chart.js"></script>
+
+    <div class="legend">
+
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: blue;"></div>
+        <span>28% of Monthly Income</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: red;"></div>
+        <span>Monthly Mortgage Payment</span>
+      </div>
+      
+    </div>
+
+    <br>
+
+    <p><i>** assuming that all other mortgage conditions (credit history, debt ration etc.) are met.</i></p>
+
+    <br>
+
+    <p>The story is reversed when it comes to mortgage eligibility. Provided that you had the down payment ready and met credit and debt factors, it became easier to qualify for a mortgage over the years as per the chart above.</p>
+    <p>It first became easy to qualify in 1993 and then things again momentarily became unaffordable before the financial crisis as home prices soared (the housing bubble) as subprime mortgages drove demand and spending.</p>
+<p><em>*Although the data for 2022 is not available here, given the meteoric rise in interest rates to combat inflation and continued growth of home prices while income did not, mortgage eligibility again became more difficult.</em></p>
+
+<h2 class="title" id="income-groups"> Mortgage Eligibility by Income Groups </h2>
+
+<p>An important, and often overlooked, question to ask how different income groups might face a different story when it comes to mortgage eligbility</p>
+<p>To achieve this, and since income is the factor we are interested in, keeping all other mortgage conditions standardized (assuming they will be met), we create a Standardized Mortgage Elgibility Index (SMEI). </p>
+<p>The calculation is made by dividing the 28% of monthly income by median monthly mortgage payment. A value above 100 means a person will be elgibible for mortgage while below 100 means they will not. </p>
+<p>We already had the data for Median Income but introduced income for the Top 10% earners and Minimum Wage Earners (calculated using US Federal Minimum Wage).</p>
+
+<div id="third-container"></div>
+<script src="third-chart.js"></script>
+
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: green;"></div>
+    <span>Top 10% Income SMEI</span>
+  </div>
+
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: black;"></div>
+    <span>Median Income SMEI</span>
+  </div>
+</div>
+
+<div class="legend">
+<div class="legend-item">
+  <div class="legend-color" style="background-color: blue;"></div>
+  <span>Minimum Wage Income SMEI</span>
+</div>
+</div>
+
+<p><i>** assuming that all other mortgage conditions (credit history, debt ration etc.) are met.</i></p>
+
+<p>What this shows is a stark contrast. While things have gotten relatively better for the Median Income group, Top 10% Earners have always been easily able to qualify for mortgage. Also the mortgage elgibility growth rate for Top 10% outpaces that of Median Earners.</p>
+<p>On the opposite end, Minimum Wage Earners have not seen any real improvement in their eligbility in 25 years (the index value remained as 26 both in 1996 and 2021).</p>
+<p>This is concerning because home ownership is a widely accepted means of growing your wealth and financial freedom. As Top 10% earners followed by Median Income earners outpace Minimum Wage earners for mortgage eligbility, the wealth gap that already exist will only widen.</p>
+<p>An important note to make is that this index considers that other conditions are met. However, factors like credit history, debt ratio etc. also affect the income groups differently. If they were considered, the contrast could potentially be sharper.</p>
+
+
+
+
+<h2 class="title" id="race-chart"> Income vs Down Payment by Race </h2>
+
+<p>To dive deeper into our question of home ownership affordability, we now look at the comparison between median annual household income and median downpayment (same 20% as before) while broken down by race</p>
+<p>Using US Census Data (<a href="https://www.statista.com/statistics/1086359/median-household-income-race-us/">accessed from Statista</a>), we show the comparison for four racial groups: "White (non-Hispanic)", "Black", "Hispanic"	and "Asian"</p>
+
+<div id="fourth-container"></div>
+<script src="fourth-chart.js"></script>
+
+<p>This chart also shows a pretty stark disparity when it comes to home ownership accessibility.</p>
+<p>Asian Americans are the only racial group for whom the 20% Down Payment has not exceeded the Median Annual Household Income and if the trends follow will not see that for at least a couple more years.</p>
+<p>White (non-Hispanic) Americans on the other hand have only faced this for the first time in 2021 while for Hispanic American Americans it happened more than 10 years ago in 2011.</p>
+<p>Black Americans face the most difficulty as the 20% Down Payment has been consistently higher than the Household Income for almost two decades since 2004</p>
+
+
+<h2 class="title" id="brief-analysis"> Brief Analysis </h2>
+
+<p>Home ownership is getting less accessible for the average American. This happens because annual household income is not increasing at the same rate as home prices. If current trends continue to hold, the market will only get even less accessible over time.</p>
+<p>But what is interesting is that that while you would need to save for longer to come up with a down payment on a house, it is becoming easier to qualify for a mortgage on a median income due to lowering interest rates over the years.</p>
+<p>However, currently, due to high interest rates as the Federal Reserve doubles down on controlling inflation, it is again getting difficult to qualify but the situation should be temporary and once inflation is under control, interest rates will be lowered again.</p>
+<p>What is the most important take away however is to understand that there are underlying inequalities that affects home ownership access. While there can potentially be other factors, two of the ones studied here are income group and race.</p>
+<p>As seen in the income group section, making a minimum wage, you can almost never qualify for mortgage. Even if you have saved up for years and have gifts, qualifying for the mortgage itself would be next to impossible. This is because the US Federal minimum wage has not seen any real improvement in a long time. Costs of living, home prices even the median income has gone up however the minimum wage failed to keep up.</p>
+<p>Another important consideration is that of race. Black households are at a much higher disadvantage than Asian followed by White and Hispanic households when it comes to home ownership accessibility. That of course does not mean that everyone Black household has it hard or every Asian household has it easy. There are always other factors at play even within racial groups but for the median income household, there is a racial disadvantage at play.</p>
+<p>My aim for this project was to show that inequalities exist when it comes to accessibility and to provide a basic introduction to the topic for further analysis and evaluation.</p>
+
+<h2 class="title" id="policy-recommendation"> Policy Recommendation </h2>
+
+<p>Although further analysis and consideration of the different factors at play are required, what is clear from this introductory analysis is that home ownership accessibility does not affect everyone in the same manner.</p>
+<p>What is needed by the government whether at the federal or regional level is consideration of these inequalities and creating programs that can improve the situation.</p>
+<p>For example, for first time homebuyers Federal Housing Administration (FHA) loans already exist allowing both a lower down payment, assistance with down payment and lower interest rates which is great and a step towards the right direction.</p>
+<p>However, to make accessibility more equitable, factors beyond just income levels are needed to be considered as they disproportionately affect people.</p>
+<p>For example, special programs for minimum wage earners or for Black Americans can help the situation for both groups. This is a direct way that home ownership can be made more accessible by providing easier mortgage eligibility, with low down payment, down payment assistance and lower than market interest rates.</p>
+<p>There are indirect methods that can be useful as well such as providing incentives and regulatory relief to stimulate the construction of lower cost houses and as well as owner occupied housing like condominiums.</p>
+<p>Another important policy is to create programs for home ownership sustainability. While qualifying for a mortgage and buying a house is an important first step, it is also equally needed that buyers can sustain it. Providing tax relief, financial literacy programs, foreclosure prevention, repair assistance etc. are just some ways that can tremendously help.</p>
+<p>Issues like home ownership accessibility are complex and require regular overview. All stakeholders whether private development corporations, non-profit organizations and related government agencies are encouraged to give the matter importance and look beyond basic metrics to uncover the ways different groups are affected.</p>
+
+<h2 class="title" id="data-sources"> Data Sources </h2>
+
+<ul style="text-align: left;">
+  <li>U.S. Census Bureau, Median Household Income in the United States [MEHOINUSA646N], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/MEHOINUSA646N">https://fred.stlouisfed.org/series/MEHOINUSA646N</a></li>
+  <li>Statista. (2022, September 22). U.S. median household income 1967-2021, by race. <a href="https://www.statista.com/statistics/1086359/median-household-income-race-us/">https://www.statista.com/statistics/1086359/median-household-income-race-us/</a></li>
+  <li>U.S. Census Bureau and U.S. Department of Housing and Urban Development, Median Sales Price of Houses Sold for the United States [MSPUS], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/MSPUS">https://fred.stlouisfed.org/series/MSPUS</a></li>
+  <li>Federal Reserve Bank of Cleveland, 10-Year Real Interest Rate [REAINTRATREARAT10Y], retrieved from FRED, Federal Reserve Bank of St. Louis; <a href="https://fred.stlouisfed.org/series/REAINTRATREARAT10Y">https://fred.stlouisfed.org/series/REAINTRATREARAT10Y</a></li>
+  <li>Pk. (2022). Household Income by Year: Average, Median, One Percent (and a Percentile Calculator). DQYDJ – Don’t Quit Your Day Job. <a href="https://dqydj.com/household-income-by-year/">https://dqydj.com/household-income-by-year/</a></li>
+</ul>
+
+<h2 class="title" id="data-sources"> Code Inspiration, Ideas & Troubleshooting </h2>
+
+<p>
+<a href="https://www.w3schools.com">W3Schools</a>, 
+<a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>, 
+<a href="https://d3-graph-gallery.com">The D3.js Graph Gallery</a>, 
+<a href="https://observablehq.com/@d3?tab=public">Observable Public Notebooks</a>, 
+<a href="https://www.javascripttutorial.net/">JavaScript Tutorial</a>
+</p>
+
+</div>
+
+  </body>
+</html>

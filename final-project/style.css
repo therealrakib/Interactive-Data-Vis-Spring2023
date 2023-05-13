@@ -1,0 +1,151 @@
+ /* Reference: */
+  /* I used seeveral sources to help with understanding CSS syntax and coming up with ideas.
+  I mostly just searched on Google for what I tried to do and went through websites to test code that worked for me.
+  Here are two of the sites I used most::after
+  W3 Schools
+  https://developer.mozilla.org/en-US/docs/Web/CSS
+  https://www.w3schools.com/css/default.asp
+  */
+
+
+  /* I used flexbox here soemthing I came across while trying
+  to search on Google for how to use CSS to align everything
+  nice and centered
+  To learn more about it::after
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+  */
+
+
+body {
+  font-family: 'Merryweather', serif;;
+  font-size: 16px;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-image: url('images/pattern-01.jpg');
+  background-size: 100%;
+}
+
+.title {
+  background-color: maroon;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0.25em 0;
+  font-weight: bold;
+
+}
+
+h3 {
+  font-size: 2em;
+  margin: 0.25em 0;
+}
+
+h4 {
+  font-size: 1.5em;
+  margin: 0.25em 0;
+}
+
+
+h5 {
+  font-size: 1.10em;
+  font: weight 400px;
+  margin: 0.25em 0;
+}
+
+p {
+  font-size: 1.10em;
+  font: weight 400px;
+  text-align: left;
+}
+
+.all-content-center {
+  background-color: #ffffff; /* wanted to add some color to css */
+  width: 55%; /* the idea is to center everything within the center of the page */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* this defines whether the flex display is horizontal or vertical. changing to row would make everything fit vertically*/
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+#container { /* centering done for container as well */
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* keeping the background of the elements in the container white */
+  width: 97%;
+}
+
+.legend {
+  display: flex;
+  margin-top: 20px;
+}
+
+.legend-item { 
+  display: flex;
+  margin-right: 20px; /* how much space we want between two items on the legend */
+}
+
+.legend-color { /* creating a 20px x 20px colored box */
+  width: 20px;
+  height: 20px;
+  margin-right: 5px; /* leaving a little space between colored box and text of legend */
+}
+
+#second-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 97%;
+  margin-top: 20px;
+}
+
+#third-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 97%;
+  margin-top: 20px;
+}
+
+#fourth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 97%;
+  margin-top: 20px;
+}
+
+#fifth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 97%;
+  margin-top: 20px;
+}
+
+ /* adding hover effects to links: */
+
+a {
+  color: blue;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: red;
+}
